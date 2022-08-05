@@ -1,6 +1,6 @@
 import React from "react";
-import Square from "./Square";
 import Knight from "./Knight";
+import BoardSquare from "./BoardSquare";
 
 export default function Board({ knightPosition, moveKnight }) {
   const squares = [];
@@ -21,12 +21,9 @@ export default function Board({ knightPosition, moveKnight }) {
   );
 }
 
-function renderSquare(i, [knightX, knightY], moveKnight) {
+function renderSquare(i, knightPosition, moveKnight) {
   const x = i % 8;
   const y = Math.floor(i / 8);
-  const isKnightHere = knightX === x && knightY === y;
-  const black = (x + y) % 2 === 1;
-  const piece = isKnightHere ? <Knight /> : null;
 
   return (
     <div
@@ -37,7 +34,15 @@ function renderSquare(i, [knightX, knightY], moveKnight) {
       }}
       onClick={() => moveKnight(x, y)}
     >
-      <Square black={black}>{piece}</Square>
+      <BoardSquare x={x} y={y}>
+        {renderPiece(x,y,knightPosition)}
+      </BoardSquare>
     </div>
   );
+}
+
+function renderPiece(x,y,[knightX,knightY]){
+  if(x===knightX && y===knightY){
+    return<Knight/>
+  }
 }

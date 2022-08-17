@@ -32,17 +32,16 @@ function renderSquare(i, knightPosition, moveKnight) {
         width: "12.5%",
         height: "12.5%",
       }}
-      onClick={() => moveKnight(x, y)}
     >
-      <BoardSquare x={x} y={y}>
-        {renderPiece(x,y,knightPosition)}
+      <BoardSquare x={x} y={y} moverKnight={moveKnight}>
+        {renderPiece(x, y, knightPosition)}
       </BoardSquare>
     </div>
   );
 }
 
-function renderPiece(x,y,[knightX,knightY]){
-  if(x===knightX && y===knightY){
-    return<Knight/>
+function renderPiece(x, y, [knightX, knightY]) {
+  if (x === knightX && y === knightY) {
+    return <Knight />;
   }
 }

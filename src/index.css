@@ -9,12 +9,3 @@
 body {
   font-family: "Poppins", sans-serif;
 }
-
-.container {
-  width: 550px;
-  margin: 50px auto;
-  overflow: auto;
-  height: 550px;
-  border: 1px solid gray;
-  border-radius: 5px;
-}

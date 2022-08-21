@@ -1,4 +1,17 @@
-export const Square = ({ black }) => {
+export const Square = ({ black, children }) => {
   const backgroundColor = black ? "black" : "white";
-  const Color = black ? "white" : "black";
+  const color = black ? "white" : "black";
+
+  return (
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        backgroundColor,
+        color,
+      }}
+    >
+      {children}
+    </div>
+  );
 };

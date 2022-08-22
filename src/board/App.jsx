@@ -10,7 +10,7 @@ const containerStyle = {
   border: "1px solid gray",
 };
 
-export default function App() {
+export const App = () => {
   const game = useMemo(() => new Game(), []);
   return (
     <div style={containerStyle}>
@@ -19,4 +19,4 @@ export default function App() {
       </DndProvider>
     </div>
   );
-}
+};

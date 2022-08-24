@@ -1,22 +1,14 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import { BoardSquare } from "./BoardSquare";
 import { Knight } from "./Knight";
 
-export const Board = () => {
-  const [[knightX, knightY], setKnightPosition] = useState([1, 6]);
+export const Board = ({ game }) => {
+  const [[knightX, knightY], setKnightPosition] = useState(game.knightPosition);
 
-  const moveKnight = (toX, toY) => {
-    setKnightPosition([toX, toY]);
-  };
+  useEffect(() => game.observer(setKnightPosition), [game]);
 
-  const canMoveKnight = (toX, toY) => {
-    const dx = toX - knightX;
-    const dy = toY - knightY;
-    return (
-      (Math.abs(dx) === 2 && Math.abs(dy) === 1) ||
-      (Math.abs(dx) === 1 && Math.abs(dy) === 2)
-    );
-  };
+  console.log(game);
 
   const squares = [];
   const renderSquare = (i) => {
@@ -31,12 +23,7 @@ export const Board = () => {
           height: "12.5%",
         }}
       >
-        <BoardSquare
-          x={x}
-          y={y}
-          moveKnight={moveKnight}
-          canMoveKnight={canMoveKnight}
-        >
+        <BoardSquare x={x} y={y} game={game}>
           {x === knightX && y === knightY && <Knight />}
         </BoardSquare>
       </div>

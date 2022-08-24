@@ -22,6 +22,8 @@ export const Board = ({ game }) => {
     game.observer(setKnightPosition);
   }, [game]);
 
+  console.log(game);
+
   function renderSquare(i) {
     const x = i % 8;
     const y = Math.floor(i / 8);

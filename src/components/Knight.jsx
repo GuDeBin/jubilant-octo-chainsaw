@@ -1,4 +1,4 @@
-import { ItemTypes } from "../board/utils/ItemTypes";
+import { ItemTypes } from "../utils/ItemType";
 import { knightImage } from "../board/utils/knightImage";
 import { DragPreviewImage, useDrag } from "react-dnd";
 

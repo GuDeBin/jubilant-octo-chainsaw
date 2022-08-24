@@ -31,8 +31,8 @@ export const BoardSquare = ({ x, y, children, moveKnight, canMoveKnight }) => {
     >
       <Square black={black}>{children}</Square>
       {isOver && !canDrop && <Overlay color={"red"} />}
-      {!isOver && canDrop && <Overlay color={"green"} />}
-      {isOver && canDrop && <Overlay color={"yellow"} />}
+      {!isOver && canDrop && <Overlay color={"yellow"} />}
+      {isOver && canDrop && <Overlay color={"green"} />}
     </div>
   );
 };

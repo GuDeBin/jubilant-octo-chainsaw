@@ -18,7 +18,9 @@ const squareStyle = {
 export const Board = ({ game }) => {
   const [[knightX, knightY], setKnightPosition] = useState(game.knightPosition);
 
-  useEffect(() => game.observer(setKnightPosition), [game]);
+  useEffect(() => {
+    game.observer(setKnightPosition);
+  }, [game]);
 
   function renderSquare(i) {
     const x = i % 8;

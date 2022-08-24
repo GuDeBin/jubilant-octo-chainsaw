@@ -1,13 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { App } from "./App";
+import { App } from "./board/App";
+import { App as App_2 } from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <div>这是教程</div>
     <App />
+    <div>这是我的</div>
+    <App_2 />
   </React.StrictMode>
 );
 

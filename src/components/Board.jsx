@@ -8,8 +8,6 @@ export const Board = ({ game }) => {
 
   useEffect(() => game.observer(setKnightPosition), [game]);
 
-  console.log(game);
-
   const squares = [];
   const renderSquare = (i) => {
     const x = i % 8;
